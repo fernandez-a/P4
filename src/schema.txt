@@ -1,0 +1,55 @@
+const typeDefs = gql`
+  type Ingrediente {
+    id: ID!
+    name: String!
+  }
+  type Query {
+     getIngrediente(id:String): Ingrediente
+     getReceta(id:ID!): Receta
+     getReceteas()
+  }
+  # type Mutation {
+  #   # addReceta(data:String!):String!
+  #   # updateReceta(id:ID!, receta:RecetaInput)
+  #   addIngrediente(data:String!):String!
+  # }
+`
+//   type IngredienteCantidad{
+//       Ingrediente: Ingrediente
+//       amount: Int
+//   }
+
+//   input IngredienteCantidadInput{
+//     ingrediente: String!
+//     amount: Int!
+
+//   }
+
+//   type Receta {
+//     id: ID!
+//     Ingredientes: [IngredientesCantidad!]!
+//     title: String!
+//     description: String!
+//   }
+
+//   input RecetaInput{
+//     title: String!
+//     description: String!
+//     Ingredientes: [IngredienteCantidadInput]
+//   }
+
+
+//   type Query {
+//     getIngrediente(id:String): Ingrediente
+//     getReceta(id:ID!): Receta
+//     getReceteas()
+
+
+//   }
+
+  // type Mutation = {
+  //   // addReceta(data:String!):String!
+  //   // updateReceta(id:ID!, receta:RecetaInput)
+  //   addIngrediente(data:String!):String!
+  // }
+//`
