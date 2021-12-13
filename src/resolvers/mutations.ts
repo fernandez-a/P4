@@ -11,15 +11,14 @@ export const Mutation = {
         // user['token'] = token;
         let hasshed_passw =  await bcrypt.hash(user.pwd, saltRound);
         user['pwd'] = hasshed_passw;
-        context.client.collection("R_Users").insertOne({email:user['email'], pwd:user['pwd'],token:null,recipies:[]})
+        context.client.collection("R_Users").insertOne({email:user['email'], pwd:user['pwd'],token:null})
         return user;
 
 
-    }
-    // addIngrediente: async(parent:any,args:any,context:Db) => {
-    //             const ingrediente = {...args};
-    //             const collection: Collection = context.collection("Ingredientes");
-    //             collection.insertOne(ingrediente);
-    //             return ingrediente;
-    //         },
+    },
+    addIngrediente: async(parent:any,args:any,context:{client:Db}) => {
+                const ingrediente = {...args};
+                context.client.collection("Ingredientes").insertOne(ingrediente);
+                return ingrediente;
+            },
 }
